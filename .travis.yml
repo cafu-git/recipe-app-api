@@ -3,9 +3,8 @@ python:
   - "3.7"
 services:
   - docker
-
 before_script:
-  - pipenv run pip freeze > requirements.txt
   - pip install docker-compose
 script:
-  - docker-compose run app sh -c "python manage.py test && flake8"
+  - docker-compose build
+  - docker-compose run sh -c "python manage.py test && flake8"
