@@ -8,6 +8,7 @@ django = "==3.0.8"
 djangorestframework = "*"
 flake8 = "==3.6.0"
 psycopg2-binary = "==2.7.5"
+pytest-django = "*"
 
 [dev-packages]
 

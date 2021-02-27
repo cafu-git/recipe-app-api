@@ -1,7 +1,9 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
+import pytest
 
 
+@pytest.mark.django_db
 class ModelTests(TestCase):
     def test_create_user_with_email_successful(self):
         """Test creating a new user with an email is successful"""
@@ -9,7 +11,6 @@ class ModelTests(TestCase):
         password = "Testpass123"
         user_model = get_user_model()
         user = user_model.objects.create_user(email=email, password=password)
-        # user = user_model.objects.get(email=email)
         self.assertEqual(user.email, email)
         self.assertTrue(user.check_password(password))
 

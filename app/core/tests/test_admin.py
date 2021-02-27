@@ -1,8 +1,10 @@
 from django.test import TestCase, Client
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+import pytest
 
 
+@pytest.mark.django_db
 class AdminSiteTests(TestCase):
     def setUp(self):
         self.client = Client()
